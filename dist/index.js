@@ -1779,8 +1779,8 @@ module.exports = localeDate;
 const core = __webpack_require__(470);
 
 function localeDate() {
-  core.info(`github env is ${JSON.stringify(process.env)}`);
-  const timeZone = (process.env.GITHUB_ENV && process.env.GITHUB_ENV.TIME_ZONE) || 'UTC'
+  const timeZone = process.env.TIME_ZONE || 'UTC'
+  core.info(`time zone is ${JSON.stringify(process.env)}`);
   const localeString = new Date().toLocaleString("en-US", { timeZone });
 
   core.info(`locale string is ${localeString}`);
