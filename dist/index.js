@@ -1772,18 +1772,13 @@ module.exports.MaxBufferError = MaxBufferError;
 /***/ }),
 
 /***/ 146:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module) {
 
 module.exports = localeDate;
 
-const core = __webpack_require__(470);
-
 function localeDate() {
   const timeZone = process.env.TIME_ZONE || 'UTC'
-  core.info(`time zone is ${JSON.stringify(process.env)}`);
   const localeString = new Date().toLocaleString("en-US", { timeZone });
-
-  core.info(`locale string is ${localeString}`);
   return new Date(localeString)
 }
 
